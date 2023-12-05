@@ -68,7 +68,7 @@ Partial Class CamperInterface
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(282, 258)
+        ClientSize = New Size(288, 264)
         Controls.Add(Label1)
         Controls.Add(Button3)
         Controls.Add(Button2)

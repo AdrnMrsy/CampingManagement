@@ -5,7 +5,7 @@ Imports Microsoft.VisualBasic.Devices
 Imports MySql.Data.MySqlClient
 Imports Mysqlx
 Imports Org.BouncyCastle.Crypto.Generators
-' test push/pull
+
 Module Module_Camping_1
     Dim con As New MySqlConnection
     Dim reader As MySqlDataReader
@@ -20,7 +20,7 @@ Module Module_Camping_1
         host = "127.0.0.1"
         dbname = "camping"
         uname = "root"
-        pwd = "adrian999"
+        pwd = "password"
         ' check if connection if open
         If Not con Is Nothing Then
             con.Close() 'close dbconnection
