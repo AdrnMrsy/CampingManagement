@@ -3,12 +3,14 @@ Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel
 Imports Microsoft.VisualBasic.Devices
 Imports MySql.Data.MySqlClient
-
+Imports Mysqlx
+Imports Org.BouncyCastle.Crypto.Generators
+' test push/pull
 Module Module_Camping_1
     Dim con As New MySqlConnection
     Dim reader As MySqlDataReader
     Dim mysqlcmd As New MySqlCommand
-    Dim mysqlcmd2 As New MySqlCommand
+    Dim mysqlcmd2, mysqlcmd3, mysqlcmd4 As New MySqlCommand
     Dim dtTable As New DataTable
     Dim adapter As New MySqlDataAdapter
     Dim host, uname, pwd, dbname As String
@@ -18,7 +20,7 @@ Module Module_Camping_1
         host = "127.0.0.1"
         dbname = "camping"
         uname = "root"
-        pwd = "password"
+        pwd = "adrian999"
         ' check if connection if open
         If Not con Is Nothing Then
             con.Close() 'close dbconnection
@@ -32,6 +34,43 @@ Module Module_Camping_1
             End Try
         End If
     End Sub
+    Public Sub login()
+        Dim username, password As String
+        username = Camping_Login.txtuser.Text
+        password = Camping_Login.txtpass.Text
+        sqlquery = "SELECT * FROM accounts WHERE Username = @username and Password = @password"
+        mysqlcmd = New MySqlCommand(sqlquery, con)
+        mysqlcmd.Parameters.AddWithValue("@username", username)
+        mysqlcmd.Parameters.AddWithValue("@password", password)
+        Dim role As String = GetUserRole(username)
+        reader = mysqlcmd.ExecuteReader
+        If reader.Read Then
+            If role = "Camper" Then
+                CamperInterface.Show()
+                Camping_Login.Hide()
+            ElseIf role = "Admin" Then
+                AdminInterface.Show()
+                Camping_Login.Hide()
+            ElseIf role = "Admin" Then
+                StaffInterface.Show()
+                Camping_Login.Hide()
+            End If
+
+        End If
+
+    End Sub
+    Public Function GetUserRole(username As String) As String
+        Dim query As String = "SELECT Account_Type FROM Accounts WHERE Username=@Username;"
+        Using command As New MySqlCommand(query, con)
+            command.Parameters.AddWithValue("@Username", username)
+            Dim role As Object = command.ExecuteScalar()
+            If role IsNot Nothing Then
+                Return role.ToString()
+            Else
+                Return "Unknown"
+            End If
+        End Using
+    End Function
     Public Sub Camper_Registry()
         Dim username, password, confirmpassword, fullname, age, birthday, phonenumber, address As String
 
@@ -200,4 +239,5 @@ Module Module_Camping_1
         Admin_Registration.txtADDRESS.Clear()
 
     End Sub
+
 End Module

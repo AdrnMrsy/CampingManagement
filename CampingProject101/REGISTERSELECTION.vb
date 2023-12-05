@@ -34,4 +34,8 @@
             MessageBox.Show("Please Enter Passcode")
         End If
     End Sub
+
+    Private Sub REGISTERSELECTION_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

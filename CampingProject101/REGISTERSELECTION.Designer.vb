@@ -34,9 +34,9 @@ Partial Class REGISTERSELECTION
         ' 
         Label4.AutoSize = True
         Label4.Font = New Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point)
-        Label4.Location = New Point(12, 9)
+        Label4.Location = New Point(10, 7)
         Label4.Name = "Label4"
-        Label4.Size = New Size(207, 32)
+        Label4.Size = New Size(165, 25)
         Label4.TabIndex = 8
         Label4.Text = "REGISTER OPTION"
         ' 
@@ -44,60 +44,65 @@ Partial Class REGISTERSELECTION
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point)
-        Label1.Location = New Point(12, 107)
+        Label1.Location = New Point(10, 80)
         Label1.Name = "Label1"
-        Label1.Size = New Size(180, 64)
+        Label1.Size = New Size(145, 50)
         Label1.TabIndex = 9
         Label1.Text = "PLEASE SELECT " & vbCrLf & "REGISTRY TYPE"
         ' 
         ' btnCamper
         ' 
-        btnCamper.Location = New Point(16, 207)
+        btnCamper.Location = New Point(14, 155)
+        btnCamper.Margin = New Padding(3, 2, 3, 2)
         btnCamper.Name = "btnCamper"
-        btnCamper.Size = New Size(176, 37)
+        btnCamper.Size = New Size(154, 28)
         btnCamper.TabIndex = 10
         btnCamper.Text = "New Camper"
         btnCamper.UseVisualStyleBackColor = True
         ' 
         ' btnAdmin
         ' 
-        btnAdmin.Location = New Point(16, 293)
+        btnAdmin.Location = New Point(14, 220)
+        btnAdmin.Margin = New Padding(3, 2, 3, 2)
         btnAdmin.Name = "btnAdmin"
-        btnAdmin.Size = New Size(176, 37)
+        btnAdmin.Size = New Size(154, 28)
         btnAdmin.TabIndex = 11
         btnAdmin.Text = "New Admin"
         btnAdmin.UseVisualStyleBackColor = True
         ' 
         ' btnStaff
         ' 
-        btnStaff.Location = New Point(16, 250)
+        btnStaff.Location = New Point(14, 188)
+        btnStaff.Margin = New Padding(3, 2, 3, 2)
         btnStaff.Name = "btnStaff"
-        btnStaff.Size = New Size(176, 37)
+        btnStaff.Size = New Size(154, 28)
         btnStaff.TabIndex = 12
         btnStaff.Text = "New Staff"
         btnStaff.UseVisualStyleBackColor = True
         ' 
         ' ReturnToLogin
         ' 
-        ReturnToLogin.Location = New Point(12, 385)
+        ReturnToLogin.Location = New Point(10, 289)
+        ReturnToLogin.Margin = New Padding(3, 2, 3, 2)
         ReturnToLogin.Name = "ReturnToLogin"
-        ReturnToLogin.Size = New Size(108, 37)
+        ReturnToLogin.Size = New Size(94, 28)
         ReturnToLogin.TabIndex = 13
         ReturnToLogin.Text = "Back"
         ReturnToLogin.UseVisualStyleBackColor = True
         ' 
         ' REGISTERSELECTION
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.AppWorkspace
-        ClientSize = New Size(378, 450)
+        ClientSize = New Size(331, 338)
         Controls.Add(ReturnToLogin)
         Controls.Add(btnStaff)
         Controls.Add(btnAdmin)
         Controls.Add(btnCamper)
         Controls.Add(Label1)
         Controls.Add(Label4)
+        Margin = New Padding(3, 2, 3, 2)
         Name = "REGISTERSELECTION"
         StartPosition = FormStartPosition.CenterScreen
         Text = "REGISTERSELECTION"

@@ -15,9 +15,13 @@ Public Class Camper_Registration
                     MsgBox("All Fields are required")
                     Return
                 End If
-                
+
             End If
         Next
         Camper_Registry()
+    End Sub
+
+    Private Sub Camper_Registration_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class
